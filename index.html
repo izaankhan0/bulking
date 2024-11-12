@@ -33,7 +33,25 @@
         </section>
 
         <section class="menu">
-
+            <div class="left-menu">
+                <img class="wheel" src="./Media/menu-rotator.png" alt="">
+            </div>
+            <div class="right-menu">
+                <h4>OUR <span class="cuisine">CUISINE</span></h4>
+                <h5>CHICKEN STEAK VEGES</h5>
+                <p>simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley
+                    of type and scrambled it to make a type specimen book. It
+                    has survived not only five centuries, but also the leap into
+                    electronic typesetting, remaining essentially unchanged.
+                    </p>
+                <div class="controller">
+                    <img src="./Media/arrow-left-orange.png" onclick="wheelLeft(); wheel();" alt="">
+                    <h6>1 / 4</h6>
+                    <img src="./Media/arrow-right-orange.png" onclick="wheelRight(); wheel();" alt="">
+                </div>
+            </div>
         </section>
 
     </div>
@@ -44,8 +62,8 @@
         function arrow1() {
             console.log("left")
             position--;
-            if (position === 4) {
-                position = 0
+            if (position < 0) {
+                position = 3;
             }
         }
         function arrow2() {
@@ -74,7 +92,21 @@
                 images[1].src = "./Media/1.png"
             }
         }
+        let rotation = 0;
+        let wheels = document.querySelector('.wheel');
+        function wheelLeft() {
+            rotation += 90;
+        }
+        function wheelRight() {
+            rotation -= 90;
+        }
+        function wheel() {
+            wheels.style.transform = `translateX(-940px) rotate(${rotation}deg) scale(3.9)`;
+            wheels.style.transition = "transform 1s ease";
+            console.log(wheel);
+        }
         
+
     </script>
 </body>
 </html>
