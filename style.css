@@ -182,3 +182,14 @@ h6{
     font-size: 40pt;
     text-align: center;
 }
+
+
+/* Add these styles to enable smooth fade transitions */
+.h5, .h5-p {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}

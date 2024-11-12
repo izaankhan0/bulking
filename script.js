@@ -35,14 +35,71 @@ function switchDishes() {
 }
 let rotation = 0;
 let wheels = document.querySelector(".wheel");
+let wheelPos = 1;
+
+let t1 = "CURRY WITH RICE";
+let t2 = "CHICKEN STEAK VEGES";
+let t3 = "CHICKEN BIRYANI";
+let t4 = "SPICY BEEF";
+
+let d1 = "A classic, hearty curry served with fluffy rice, balancing bold spices with creamy richness. Perfectly blended to give every bite a flavorful kick, it's an ideal choice for curry lovers seeking comfort and warmth.";
+let d2 = "Tender chicken steak with fresh vegetables, grilled to perfection and seasoned with aromatic spices. This protein-packed dish is loved for its hearty, delicious flavors that energize and satisfy.";
+let d3 = "A fragrant, flavorful chicken biryani made with tender meat, basmati rice, and carefully layered spices. This beloved dish offers a taste of tradition, perfect for those craving a touch of indulgence.";
+let d4 = "A rich, spicy beef dish that brings together savory flavors with a touch of heat. Slow-cooked for tenderness, this meal is crafted for those who enjoy bold, memorable tastes with each bite.";
+
 function wheelLeft() {
-  rotation += 90;
+    rotation += 90;
+    wheelPos--;
+    if (wheelPos == 0){
+        wheelPos = 4;
+    }
+    textChange();
 }
 function wheelRight() {
-  rotation -= 90;
+    rotation -= 90;
+    wheelPos++;
+    if (wheelPos == 5){
+        wheelPos = 1;
+    }
+    textChange();
 }
+let heading = document.querySelector(".h5");
+let description = document.querySelector(".h5-p");
 function wheel() {
-  wheels.style.transform = `translateX(-940px) rotate(${rotation}deg) scale(3.9)`;
-  wheels.style.transition = "transform 1s ease";
-  console.log(wheel);
+    // Get elements
+    const heading = document.querySelector(".h5");
+    const description = document.querySelector(".h5-p");
+
+    // Add fade-out class to start the transition
+    heading.classList.add("fade-out");
+    description.classList.add("fade-out");
+    wheels.style.transition = "transform 1s ease";
+        
+    wheels.style.transform = `translateX(-940px) rotate(${rotation}deg) scale(3.9)`;
+    // Wait for the fade-out transition to finish, then change the text
+    setTimeout(() => {
+        
+        // Update text based on wheel position
+        if (wheelPos === 1) {
+            heading.innerHTML = `${t1}`;
+            description.innerHTML = `${d1}`;
+        } else if (wheelPos === 2) {
+            heading.innerHTML = `${t2}`;
+            description.innerHTML = `${d2}`;
+        } else if (wheelPos === 3) {
+            heading.innerHTML = `${t3}`;
+            description.innerHTML = `${d3}`;
+        } else if (wheelPos === 4) {
+            heading.innerHTML = `${t4}`;
+            description.innerHTML = `${d4}`;
+        }
+
+        // Remove fade-out and trigger fade-in by re-adding opacity
+        heading.classList.remove("fade-out");
+        description.classList.remove("fade-out");
+    }, 500); // Duration should match CSS transition timing (0.5s here)
+}
+
+function textChange() {
+    document.querySelector('.text-change-1').innerHTML = `${wheelPos} / 4`
 }
