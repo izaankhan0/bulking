@@ -61,16 +61,24 @@ ul > a{
 img[src="./Media/arrow-left.png"]{
     width: 70px;
     margin-top: 20px;
+    cursor: pointer;
 }
 img[src="./Media/arrow-right.png"]{
     width: 70px;
     margin-top: 20px;
+    cursor: pointer;
 }
 img[src="./Media/2.png"]{
     width: 600px;
 }
 img[src="./Media/1.png"]{
-    width: 630px;
+    width: 600px;
+}
+img[src="./Media/3.png"]{
+    width: 600px;
+}
+img[src="./Media/4.png"]{
+    width: 600px;
 }
 h1{
     font-size: 43.8pt;

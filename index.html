@@ -20,7 +20,7 @@
                 </ul>
             </nav>
             <div class="main-panel">
-                <div class="left-main side-main"><img src="./Media/1.png" alt=""><img src="./Media/arrow-left.png" alt=""></div>
+                <div class="left-main side-main"><img class="main-dishes" src="./Media/1.png" alt=""><img src="./Media/arrow-left.png" onclick="arrow1();switchDishes();" alt=""></div>
                 <div class="mid-main">
                     <h1>BULKING</h1>
                     <h2>THE BEST</h2>
@@ -28,7 +28,7 @@
                     <p>At The Bulking, we serve serious fuel for serious gains. Born from the passion for fitness and flavor, our bulking restaurant offers hearty, high-protein meals that pack the punch every athlete craves. From juicy steaks and grilled chicken breasts to protein-packed shakes and energy-loaded sides, each dish is crafted to help you hit your macros while delighting your taste buds.</p>
                         <button>ORDER NOW</button>
                 </div>
-                <div class="right-main side-main"><img src="./Media/2.png" alt=""><img src="./Media/arrow-right.png" alt=""></div>
+                <div class="right-main side-main"><img class="main-dishes" src="./Media/2.png" alt=""><img src="./Media/arrow-right.png" onclick="arrow2();switchDishes();" alt=""></div>
             </div>    
         </section>
 
@@ -37,5 +37,44 @@
         </section>
 
     </div>
+
+    <script>
+        let position = 0;
+        let images = document.querySelectorAll(".main-dishes");
+        function arrow1() {
+            console.log("left")
+            position--;
+            if (position === 4) {
+                position = 0
+            }
+        }
+        function arrow2() {
+            console.log("right")
+            position++;
+            if (position === 4) {
+                position = 0
+            }
+        }
+
+        function switchDishes() {
+            if(position == 0){
+                images[0].src = "./Media/1.png"
+                images[1].src = "./Media/2.png"
+            }
+            if(position == 1){
+                images[0].src = "./Media/2.png"
+                images[1].src = "./Media/3.png"
+            }
+            if(position == 2){
+                images[0].src = "./Media/3.png"
+                images[1].src = "./Media/4.png"
+            }
+            if(position == 3){
+                images[0].src = "./Media/4.png"
+                images[1].src = "./Media/1.png"
+            }
+        }
+        
+    </script>
 </body>
 </html>
