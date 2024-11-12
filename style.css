@@ -5,29 +5,29 @@
     font-family: "Poppins", sans-serif;
 }
 .container{
-    background-image: url(./Media/bg-2.png);
+    background-image: url(./Media/bg-5.png);
     background-size: contain;
     overflow: hidden;
+    height: 200vh;
 }
-
 nav{
     display: flex;
     justify-content: center;
     padding: 30px 0px;
 }
-
 ul{
     display: flex;
     color: white;
     /* text-decoration: none; */
 }
-
 ul > a > li{
     list-style: none;
     color: white;
     text-decoration: none;
     font-size: 18.1pt;
     margin: 0px 50px;
+    font-weight: 600;
+    transition: 100ms ease;
 }
 
 ul > a{
@@ -36,7 +36,6 @@ ul > a{
 
 .main-panel{
     display: flex;
-    /* justify-content: center; */
     justify-content: space-evenly;
     width: 100vw;
 }
@@ -54,12 +53,11 @@ ul > a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 99vh;
+    height: 750px;
     background-color: #ffa300;
     border-radius: 20px;
     /* justify-content: center; */
 }
-
 img[src="./Media/arrow-left.png"]{
     width: 70px;
     margin-top: 20px;
@@ -92,8 +90,32 @@ h3{
 }
 .mid-main > p{
     text-align: center;
-    font-size: 10pt;
+    font-size: 12pt;
+    font-weight: 600;
     position: relative;    
     bottom: 100px;
     width: 90%;
+}
+.mid-main > button{
+    background-color: transparent;
+    padding: 20px 50px;
+    color: #ffa300;
+    border: solid #ffa300 5px;
+    border-radius: 10px;
+    position: relative;
+    bottom: 60px;
+    right: 7px;
+    font-size: 22px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+}
+.mid-main > button:hover{
+    background-color: #ffa300;
+    /* padding: 20px 50px; */
+    color: #000000;
+    border: solid #000000 5px;
+}
+nav > ul > a > li:hover{
+    color: #ffa300;
 }
