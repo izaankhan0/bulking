@@ -43,6 +43,7 @@
     }
     .mid-main{
         width: 100%;
+        margin-top: 50px;
     }
     .left-menu{
         left: 400px;
@@ -50,6 +51,30 @@
     h4{
         font-size: 55pt;
     }
+
+    burger{
+        display: flex;
+    }
+
+    nav{
+        display: none;
+    }
+    
+    van{
+        display: block;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
 @media (max-width:800px){
     .left-menu{
@@ -84,6 +109,9 @@
     }
     .main-panel{
         margin-bottom: 200px;
+    }
+    van > ul > a > li{
+        font-size: 22pt;
     }
 }
 
