@@ -242,6 +242,7 @@ burger{
     border-radius: 10px;
     width: 100%;
     height: 6px;
+    transition: 0.7s ease;
 }
 .show{
     left: 0px;
@@ -513,4 +514,16 @@ burger{
         top: 60%;
         opacity: 0;
     }
+}
+
+/* ADDING BURGER ANIMATION XD */
+
+.alter-1{
+    transform: rotate(45deg) translateY(16px);
+}
+.alter-2{
+    transform: scaleY(300) translateX(-800px);
+}
+.alter-3{
+    transform: rotate(-45deg) translateY(-16px);
 }
