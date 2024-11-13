@@ -111,3 +111,12 @@ function switch1() {
     flag = false;
   }
 }
+window.addEventListener("load", function() {
+  const preloader = document.querySelector(".wrapper");
+  preloader.style.transition = "opacity 0.5s ease";
+  preloader.style.opacity = "0";
+
+  setTimeout(() => {
+    preloader.style.display = "none";
+  }, 500);
+});
