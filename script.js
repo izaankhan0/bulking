@@ -66,20 +66,16 @@ function wheelRight() {
 let heading = document.querySelector(".h5");
 let description = document.querySelector(".h5-p");
 function wheel() {
-    // Get elements
     const heading = document.querySelector(".h5");
     const description = document.querySelector(".h5-p");
 
-    // Add fade-out class to start the transition
     heading.classList.add("fade-out");
     description.classList.add("fade-out");
     wheels.style.transition = "transform 1s ease";
         
     wheels.style.transform = `translateX(-940px) rotate(${rotation}deg) scale(3.9)`;
-    // Wait for the fade-out transition to finish, then change the text
     setTimeout(() => {
         
-        // Update text based on wheel position
         if (wheelPos === 1) {
             heading.innerHTML = `${t1}`;
             description.innerHTML = `${d1}`;
@@ -94,10 +90,9 @@ function wheel() {
             description.innerHTML = `${d4}`;
         }
 
-        // Remove fade-out and trigger fade-in by re-adding opacity
         heading.classList.remove("fade-out");
         description.classList.remove("fade-out");
-    }, 500); // Duration should match CSS transition timing (0.5s here)
+    }, 500);
 }
 
 function textChange() {

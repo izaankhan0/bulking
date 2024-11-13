@@ -62,6 +62,32 @@
         font-size: 25pt;
     }
 }
+
+@media (max-width:700px){
+    .menu{
+        flex-direction: column;
+    }
+    .right-menu{
+        width: 100%;
+    }
+    .wheel{
+        display: none;
+    }
+    .left-menu{
+        left: 1090px;
+        top: -400px;
+    }
+    .hero{
+        background-image: url(./Media/bg-5.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .main-panel{
+        margin-bottom: 200px;
+    }
+}
+
+
 @media (max-width:500px){
     h1{
             font-size: 31.8pt;
@@ -74,5 +100,20 @@
     h3{
         font-size: 71pt;
         bottom: 96px;
+    }
+    h4{
+        font-size: 36pt;
+    }
+    .h5-p{
+        padding-left: 0px ;
+        padding-right: 0px ;
+    }
+}
+@media (max-width:400px){
+    .right-menu > p{
+        padding-left: 0px ;
+        padding-right: 0px ;
+        margin-left: 10px ;
+        margin-right: 10px ;
     }
 }
